@@ -1,0 +1,64 @@
+<html>
+<head>
+  <meta>
+  <title>網頁呈現</title>
+  <style>
+
+nav {
+  background-color: #333;    
+  padding: 10px 20px;     
+}
+
+
+nav ul {
+  list-style-type: none;      
+  margin: 0;        
+  padding: 0;             
+  display: flex;        
+}
+
+
+nav li {
+  margin-right: 20px;         
+}
+
+
+nav a {
+  text-decoration: none;     
+  color: white;              
+  font-weight: bold;  
+  padding: 6px 12px;          
+  transition: background-color 0.3s; 
+}
+
+
+nav a:hover {
+  background-color: #555;  
+  border-radius: 4px;  
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="final.html">首頁</a></li>
+	  <!--<a href="pages/page1.html" target="main">關於我們<a>-->
+      <li><a href="api/ajax.html" target="main">api1</a></li>
+      <li><a href="api/ajax2.html" target="main">api2</a></li>
+      <li><a href="api/ajax3.html" target="main">api3</a></li>
+	  <li><a href="api/ajax4.html" target="main">api4</a></li>
+	  <li><a href="api/ajax5.html" target="main">api5</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>結訓作品-網頁呈現</h1>
+	<iframe name="main" src="pages/blank.html" width="100%" height="550">
+	您的瀏覽器不支援iframe框架
+	</iframe>
+  </main>
+
+</body>
+</html>

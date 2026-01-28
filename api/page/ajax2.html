@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Ajax</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+歐元12/12匯率 API:<br>
+https://api.frankfurter.app/latest
+<br>
+<div class="container">
+<table border="1" class="table">
+		<tr>
+			<td>NO</td>
+			<td>幣種</td>
+			<td>匯率</td>
+		</tr>
+	<tbody id="row">
+	</tbody>
+</table>
+</div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+	<!--$("#row").html("<tr><td>213</td><td>zxc</td></tr>");-->
+	$.ajax({
+		url:"https://api.frankfurter.app/latest",
+		type:"get",
+			dataType:"json",
+		success:function(info){
+			console.log("查詢抓回來幾筆資料:",info.length);
+			const ratesArray = Object.entries(info.rates);
+			const total_len = ratesArray.length;
+			
+			for(i=0;i<total_len;i++){
+				
+				$("#row").append(
+					"<tr><td>"+(i+1)+"</td>"
+					+"<td>"+ratesArray[i][0]+"</td>"
+					+"<td>"+ratesArray[i][1]+"</td></tr>"
+				)
+			}
+		},
+		error:function(data){
+			console.log("請求失敗");
+		}
+		});
+});
+</script>
